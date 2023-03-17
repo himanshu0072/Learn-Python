@@ -1960,11 +1960,12 @@
 # import numpy
 # print(numpy.linalg.det([[1, 2], [2, 1]]))
 import numpy
+#
+# import numpy
+#
+# arr = []
+# for _ in range(int(input())):
+#     arr.append(list(map(float,input().split())))
+# out = numpy.linalg.det(numpy.array(arr))
+# print(round(out,2))
 
-import numpy
-
-arr = []
-for _ in range(int(input())):
-    arr.append(list(map(float,input().split())))
-out = numpy.linalg.det(numpy.array(arr))
-print(round(out,2))
