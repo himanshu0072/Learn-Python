@@ -1785,3 +1785,186 @@
 # days = ['MONDAY', ' TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY']
 
 # print(days[day])
+
+#
+# import sys
+#
+# n = int(sys.stdin.readline())
+# s = set(map(int, sys.stdin.readline().split()))
+# num_ops = int(sys.stdin.readline())
+#
+# for i in range(num_ops):
+#     op, size = sys.stdin.readline().split()
+#     other_set = set(map(int, sys.stdin.readline().split()))
+#     if op == 'intersection_update':
+#         s.intersection_update(other_set)
+#     elif op == 'update':
+#         s.update(other_set)
+#     elif op == 'difference_update':
+#         s.difference_update(other_set)
+#     elif op == 'symmetric_difference_update':
+#         s.symmetric_difference_update(other_set)
+#
+# print(sum(s))
+
+
+
+
+#
+# def count(room_list, n):
+#
+#     mp = dict()
+#     for i in range(n):
+#         if room_list[i] in mp.keys():
+#             mp[room_list[i]] += 1
+#         else:
+#             mp[room_list[i]] = 1
+#     for x in mp:
+#         if mp[x]==1 :
+#           print(x);
+#
+# K = int(input())
+# room_list = list(map(int, input().split()))
+# n = len(room_list)
+# count(room_list, n)
+#
+# ID, MARKS, NAME, CLASS = input().split()
+# print(ID, MARKS, NAME, CLASS)
+
+# from collections import namedtuple
+#
+# n = int(input())
+# Student = namedtuple('Student', input().split())
+# marks = [int(Student._make(input().split()).MARKS) for _ in range(n)]
+# print("{:.2f}".format(sum(marks) / n))
+
+# import collections
+#
+# q = collections.deque()
+# print(q)
+# q.appendleft(10)
+# q.appendleft(20)
+# q.appendleft(30)
+# print(q)
+# q.pop()
+# q.pop()
+# q.pop()
+# print(q)
+# print(not q) # to check that the queue is empty or not.
+
+#importing queue module
+# import queue
+# a = queue.Queue(maxsize=5)
+# a.put(1)
+# a.put(1)
+# a.put(1)
+# a.put(1)
+# a.put(1)
+# a.get(1)
+# print(a.queue)
+
+#orders dict
+# from collections import OrderedDict
+# d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
+# print(OrderedDict(sorted(d.items(), key=lambda t: t[0])))
+#
+
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# from collections import OrderedDict
+#
+# N = int(input())
+# d = OrderedDict()
+# for i in range(N):
+#     item = input().split()
+#     item_price = int(item[-1])
+#     item_name = " ".join(item[:-1])
+#     if d.get(item_name):
+#         d[item_name] += item_price
+#     else:
+#         d[item_name] = item_price
+#
+# for i in d.keys():
+#     print(i, d[i])
+
+
+#
+# n = int(input())
+# word_count = {}
+# 
+# # loop through input words and count their occurrences
+# for i in range(n):
+#     word = input().strip()
+#     if word in word_count:
+#         word_count[word] += 1
+#     else:
+#         word_count[word] = 1
+#
+# # output the number of distinct words and their count in order
+# print(len(word_count))
+# counts = [word_count[word] for word in word_count]
+# print(' '.join(map(str, counts)))
+
+
+# import numpy
+#
+# A = numpy.array([0, 1])
+# B = numpy.array([3, 4])
+# print(numpy.inner(A, B))
+# print(numpy.outer(A, B))
+#
+# Task
+#
+# You are given two arrays:  and .
+# Your task is to compute their inner and outer product.
+#
+# import numpy
+#
+#
+# A = list(map(int, input().split()))
+# B = list(map(int, input().split()))
+#
+# print(numpy.inner(A, B))
+# print(numpy.outer(A, B))
+
+# Polynomials
+
+# import numpy
+# print(numpy.poly([-1,1,1,10]))
+#
+# print(numpy.roots([1,0,-1]))
+#
+# print(numpy.polyint([1, 1, 1]))
+#
+# print(numpy.polyder([1, 1, 1, 1]))
+#
+# print(numpy.polyval([1, -2, 0, 2], 4))
+#
+# print(numpy.polyfit([0,1,-1, 2, -2], [0,1,1, 4, 4], 2))
+
+
+
+# Task
+# You are given the coefficients of a polynomial .
+# Your task is to find the value of  at point .
+# import numpy
+#
+# P = list(map(float, input().split()))
+# x=int(input())
+#
+# print(numpy.polyval(P,x))
+
+
+#determinants
+
+# import numpy
+# print(numpy.linalg.det([[1, 2], [2, 1]]))
+import numpy
+
+import numpy
+
+arr = []
+for _ in range(int(input())):
+    arr.append(list(map(float,input().split())))
+out = numpy.linalg.det(numpy.array(arr))
+print(round(out,2))
