@@ -1998,3 +1998,28 @@
 #         print("Valid")
 #     else:
 #         print("Invalid")
+
+# MIN AND MAX
+# import numpy
+#
+# N, M = map(int,input().split())
+# mat = []
+# for i in range(N):
+#     raw = list(map(int, input().split()))
+#     mat.append(raw)
+# min_mat = numpy.min(mat, axis=1)
+#
+# print(max(min_mat))
+
+#sum and product
+# import numpy
+#
+# N, M = map(int, input().split())
+# mat = []
+# for i in range(N):
+#     raw = list(map(int, input().split()))
+#     mat.append(raw)
+#
+# a = numpy.sum(mat, axis=0)
+#
+# print(numpy.prod(a))
