@@ -2044,22 +2044,38 @@
 #   main()
 
 
-# class in python
+# class and object in python
+
+# class Person:   # Class
+#     name = "Himanshu Prajapati"
+#     role = "Web Developer"
+#     age = 18
+#
+#     def info(self):
+#         print(f"{self.name} is a {self.role} and he is {self.age} year old.")
+#
+# a = Person()  # object  #it will call default
+#
+# b = Person()  # it will call name role and age through B
+# b.name = "Ranu"
+# b.role = "Software Developer"
+# b.age = 20
+#
+# b.info()
+# a.info()
+
+
+
+# constructor in python
 
 class Person:   # Class
-    name = "Himanshu Prajapati"
-    role = "Web Developer"
-    age = 18
+    def __init__(self, name, role, age):  # constructor
+        self.name = name
+        self.role = role
+        self.age = age
 
     def info(self):
         print(f"{self.name} is a {self.role} and he is {self.age} year old.")
 
-a = Person()  # object  #it will call default
-
-b = Person()  # it will call name role and age through B
-b.name = "Ranu"
-b.role = "Software Developer"
-b.age = 20
-
-b.info()
+a = Person("Himanshu", "Developer", 20)  # passing argument as a constructor
 a.info()
