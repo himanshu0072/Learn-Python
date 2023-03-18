@@ -2150,3 +2150,36 @@
 # print(obj1.__age)
 # print(obj1.__funName())
 
+
+
+# solving hackerrank question
+# remove element from a list using remove(x)
+#remove
+# x=1
+# s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+# s.remove(x)
+# print(s)
+
+# discard
+# x=100
+# s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+# s.discard(x)
+# print(s)
+
+
+
+
+# pop, discard, remove
+
+# n = int(input())
+# s = set(map(int, input().split()))
+# num = int(input())
+# for i in range(num):
+#     ip = input().split()
+#     if ip[0]=="remove":
+#         s.remove(int(ip[1]))
+#     elif ip[0]=="discard":
+#         s.discard(int(ip[1]))
+#     else :
+#         s.pop()
+# print(sum(list(s)))
