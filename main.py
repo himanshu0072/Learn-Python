@@ -1959,7 +1959,7 @@
 
 # import numpy
 # print(numpy.linalg.det([[1, 2], [2, 1]]))
-import numpy
+# import numpy
 #
 # import numpy
 #
@@ -1968,4 +1968,33 @@ import numpy
 #     arr.append(list(map(float,input().split())))
 # out = numpy.linalg.det(numpy.array(arr))
 # print(round(out,2))
+#
+# Multiplication of matrix
+# import numpy
+#
+# N = int(input())
+# A = []
+# B = []
+# for i in range(N):
+#     raw = list(map(int, input().split()))
+#     A.append(raw)
+#
+# for j in range(N):
+#     raws = list(map(int, input().split()))
+#     B.append(raws)
+#
+# print(A, B)
+# print(numpy.cross(A, B))
 
+# Credit / debit card validation
+# import re
+#
+# pattern = r'(?!.*(\d)(-?\1){3}.*)^[456]([\d]{15}|[\d]{3}(-[\d]{4}){3})$'
+#
+# N = int(input())
+# for i in range(N):
+#     cards = input()
+#     if re.match(pattern, cards):
+#         print("Valid")
+#     else:
+#         print("Invalid")
