@@ -2084,6 +2084,8 @@
 def greet(fx):
     def mfx():
         print("Hello, good morning!")
+        print("We are adding the numbers.. .please Wait...")
+        print("The sum of numbers is :")
         fx()
         print("Thank you for using this addition tool..")
         print("I hope you enjoyed it.")
