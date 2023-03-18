@@ -2068,14 +2068,33 @@
 
 # constructor in python
 
-class Person:   # Class
-    def __init__(self, name, role, age):  # constructor
-        self.name = name
-        self.role = role
-        self.age = age
+# class Person:   # Class
+#     def __init__(self, name, role, age):  # constructor
+#         self.name = name
+#         self.role = role
+#         self.age = age
+#
+#     def info(self):
+#         print(f"{self.name} is a {self.role} and he is {self.age} year old.")
+#
+# a = Person("Himanshu", "Developer", 20)  # passing argument as a constructor
+# a.info()
 
-    def info(self):
-        print(f"{self.name} is a {self.role} and he is {self.age} year old.")
 
-a = Person("Himanshu", "Developer", 20)  # passing argument as a constructor
-a.info()
+def greet(fx):
+    def mfx():
+        print("Hello, good morning!")
+        fx()
+        print("Thank you for using this addition tool..")
+        print("I hope you enjoyed it.")
+    return mfx()
+
+@greet
+def Add():
+    print(5 + 5)
+
+
+
+
+
+
