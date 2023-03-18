@@ -2023,3 +2023,43 @@
 # a = numpy.sum(mat, axis=0)
 #
 # print(numpy.prod(a))
+
+# Second Maximum in an Array
+# def main():
+#   # Write your code here
+#   n=int(input())
+#   arr=list(map(int, input().split()))
+#   max1 = max2 = -1001
+#   for i in range(n):
+#     if arr[i] > max1:
+#       max2= max1
+#       max1 = arr[i]
+#     elif arr[i] > max2 and arr[i] != max1:
+#       max2 = arr[i]
+#   if max2 == -1001:
+#     print(0)
+#   else:
+#     print(max2)
+# if __name__ == "__main__":
+#   main()
+
+
+# class in python
+
+class Person:   # Class
+    name = "Himanshu Prajapati"
+    role = "Web Developer"
+    age = 18
+
+    def info(self):
+        print(f"{self.name} is a {self.role} and he is {self.age} year old.")
+
+a = Person()  # object  #it will call default
+
+b = Person()  # it will call name role and age through B
+b.name = "Ranu"
+b.role = "Software Developer"
+b.age = 20
+
+b.info()
+a.info()
