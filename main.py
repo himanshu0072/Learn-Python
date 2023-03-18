@@ -1063,7 +1063,6 @@
 # is_anagram("Hii", "Hii")
 
 
-
 # #// Return True/1 if the strings are anagram. else False/0
 # def isAnagram(string1, string2):
 #   # Write your code here
@@ -1099,8 +1098,6 @@
 #
 # if __name__ == "__main__":
 #     main()
-
-
 
 
 # def main():
@@ -1189,8 +1186,6 @@
 #         print(i, end=' ')
 # if __name__ == "__main__":
 #     main()
-
-
 
 
 # programm for 2d array
@@ -1378,7 +1373,7 @@
 #   print("Merged List =",mergeArrays(A, B))
 
 
-#Linear search in both sorted and unsorted list or u can say array
+# Linear search in both sorted and unsorted list or u can say array
 # list=[1,2,3,4,6,7,8,9,12,13,15,20,21,22,26]
 # x = 20
 # ind = 0
@@ -1405,10 +1400,6 @@
 #         print('Element found at location :',loc)
 #     else:
 #         print('Element not present in array.')
-
-
-
-
 
 
 # def rec_linear_search(array,left,right,x):
@@ -1451,7 +1442,6 @@
 #
 # if __name__ == "__main__":
 #     main()
-
 
 
 #
@@ -1546,7 +1536,6 @@
 #   print('Given Array', ' '.join(str(x) for x in arr))
 #   selectionSort(arr);
 #   print('Sorted Array', ' '.join(str(x) for x in arr))
-
 
 
 # insertion sort 0
@@ -1670,8 +1659,6 @@
 #     minion_game(s)
 
 
-
-
 # You are given a string .
 # Your task is to print all possible size  replacement combinations of the string in lexicographic sorted order.
 
@@ -1700,7 +1687,7 @@
 # for k, g in groupby(a):
 #     print((len(list(g)), int(k)), end=' ')
 
-#You are given a complex z. Your task is to convert it to polar coordinates.
+# You are given a complex z. Your task is to convert it to polar coordinates.
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 # import math
 # import cmath
@@ -1711,8 +1698,6 @@
 # radian = cmath.phase(z)
 # print(r)
 # print(radian)
-
-
 
 
 # import math
@@ -1808,8 +1793,6 @@
 # print(sum(s))
 
 
-
-
 #
 # def count(room_list, n):
 #
@@ -1852,7 +1835,7 @@
 # print(q)
 # print(not q) # to check that the queue is empty or not.
 
-#importing queue module
+# importing queue module
 # import queue
 # a = queue.Queue(maxsize=5)
 # a.put(1)
@@ -1863,7 +1846,7 @@
 # a.get(1)
 # print(a.queue)
 
-#orders dict
+# orders dict
 # from collections import OrderedDict
 # d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
 # print(OrderedDict(sorted(d.items(), key=lambda t: t[0])))
@@ -1943,7 +1926,6 @@
 # print(numpy.polyfit([0,1,-1, 2, -2], [0,1,1, 4, 4], 2))
 
 
-
 # Task
 # You are given the coefficients of a polynomial .
 # Your task is to find the value of  at point .
@@ -1955,7 +1937,7 @@
 # print(numpy.polyval(P,x))
 
 
-#determinants
+# determinants
 
 # import numpy
 # print(numpy.linalg.det([[1, 2], [2, 1]]))
@@ -2011,7 +1993,7 @@
 #
 # print(max(min_mat))
 
-#sum and product
+# sum and product
 # import numpy
 #
 # N, M = map(int, input().split())
@@ -2065,7 +2047,6 @@
 # a.info()
 
 
-
 # constructor in python
 
 # class Person:   # Class
@@ -2080,23 +2061,39 @@
 # a = Person("Himanshu", "Developer", 20)  # passing argument as a constructor
 # a.info()
 
+#
+# def greet(fx):
+#     def mfx():
+#         print("Hello, good morning!")
+#         print("We are adding the numbers.. .please Wait...")
+#         print("The sum of numbers is :")
+#         fx()
+#         print("Thank you for using this addition tool..")
+#         print("I hope you enjoyed it.")
+#     return mfx()
+#
+# @greet
+# def Add():
+#     print(5 + 5)
 
-def greet(fx):
-    def mfx():
-        print("Hello, good morning!")
-        print("We are adding the numbers.. .please Wait...")
-        print("The sum of numbers is :")
-        fx()
-        print("Thank you for using this addition tool..")
-        print("I hope you enjoyed it.")
-    return mfx()
+# inheritance in Python
 
-@greet
-def Add():
-    print(5 + 5)
+class Employee:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+
+    def showDetails(self):
+        print(f"The Employee with ID = {self.id} is {self.name}.")
 
 
+class Programmer(Employee):  # inheritance
+    def showLang(self):
+        print(f"He knows Python")
 
 
-
-
+e = Employee("Himanshu Prajapati", 2)
+e.showDetails()
+e = Programmer("Priya", 20)
+e.showDetails()
+e.showLang()
