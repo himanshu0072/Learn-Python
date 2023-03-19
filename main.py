@@ -2219,5 +2219,18 @@
 
 
 # sum of all element of a list
-a =[1, 2, 3, 4, 10, 11]
-print(sum(a))
+# a =[1, 2, 3, 4, 10, 11]
+# print(sum(a))
+
+
+# Subset of a set
+T = int(input())
+for i in range(T):
+    A_N = int(input())
+    A = set(map(int, input().split()))
+    B_N = int(input())
+    B = set(map(int, input().split()))
+    if A.issubset(B):
+        print("True")
+    else:
+        print("False")
