@@ -2223,7 +2223,7 @@
 # print(sum(a))
 
 
-# Subset of a set
+# Subset of a set in oython
 T = int(input())
 for i in range(T):
     A_N = int(input())
