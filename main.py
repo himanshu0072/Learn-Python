@@ -2183,3 +2183,15 @@
 #     else :
 #         s.pop()
 # print(sum(list(s)))
+
+# Type casting
+
+a = "10"
+b = "20"
+print(a+b)
+print(int(a)+int(b)) # type casting in python
+
+
+
+
+
