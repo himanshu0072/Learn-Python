@@ -2212,6 +2212,12 @@
 #         print(f"{int(Number)} X {i} = {int(Number) * i}")
 # except Exception as e:
 #     print(f"Error !! {e}")
+#
+# import himanshu
+# himanshu.Welcome()
 
-import himanshu
-himanshu.Welcome()
+
+
+# sum of all element of a list
+a =[1, 2, 3, 4, 10, 11]
+print(sum(a))
