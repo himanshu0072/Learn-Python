@@ -2099,10 +2099,9 @@
 # e.showLang()
 
 
-
 # Access Modifier in Python
 
-#protected
+# protected
 
 # class Student:
 #     def __init__(self):
@@ -2125,7 +2124,7 @@
 # print(obj1._funName())
 
 
-#private
+# private
 # class Student:
 #     def __init__(self, age, name):
 #         self.__age = age  # An indication of private variable
@@ -2151,10 +2150,9 @@
 # print(obj1.__funName())
 
 
-
 # solving hackerrank question
 # remove element from a list using remove(x)
-#remove
+# remove
 # x=1
 # s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 # s.remove(x)
@@ -2165,8 +2163,6 @@
 # s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 # s.discard(x)
 # print(s)
-
-
 
 
 # pop, discard, remove
@@ -2187,15 +2183,23 @@
 # Type casting
 
 # Explicit TypeCasting
-a = "10"
-b = "20"
-print(a+b)
-print(int(a)+int(b)) # explicit type casting in python done by developer
+# a = "10"
+# b = "20"
+# print(a+b)
+# print(int(a)+int(b)) # explicit type casting in python done by developer
+#
+#
+# # Implicit TypeCasting
+# c = 1.28
+# d = 2
+# print(c+d) # TypeCasing done by compiler automatically from lower to higher
+#
 
+# Error Handling in python
 
-# Implicit TypeCasting
-c = 1.28
-d = 2
-print(c+d) # TypeCasing done by compiler automatically from lower to higher
-
-
+Number = input("Enter a number :")
+try:
+    for i in range(1, 11):
+        print(f"{int(Number)} X {i} = {int(Number) * i}")
+except:
+    print("Invalid Input !!")
