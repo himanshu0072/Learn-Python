@@ -2251,13 +2251,31 @@
 # print(is_superset)
 
 # print pattern in two line challange
-for i in range(1, int(input())):
-    print(((10**i)//9)*i)
+# for i in range(1, int(input())):
+#     print(((10**i)//9)*i)
+
+
+# Array Dimensions
+
+# 1. Using shape to get array dimensions
+import numpy
+
+my_1D_array = numpy.array([1, 2, 3, 4, 5])
+print(my_1D_array.shape)     #(5,) -> 1 row and 5 columns
+
+my_2D_array = numpy.array([[1, 2],[3, 4],[6,5]])
+print(my_2D_array.shape)    #(3, 2) -> 3 rows and 2 columns
 
 
 
+# 2. Using shape to change array dimensions
 
 
+import numpy
+
+change_array = numpy.array([1,2,3,4,5,6])
+change_array.shape = (3, 2)
+print(change_array)
 
 
 
