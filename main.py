@@ -2197,9 +2197,18 @@
 
 # Error Handling in python
 
+# Number = input("Enter a number :")
+# try:
+#     for i in range(1, 11):
+#         print(f"{int(Number)} X {i} = {int(Number) * i}")
+# except:
+#     print("Invalid Input !!")
+
+# Error Handling in python
+
 Number = input("Enter a number :")
 try:
     for i in range(1, 11):
         print(f"{int(Number)} X {i} = {int(Number) * i}")
-except:
-    print("Invalid Input !!")
+except Exception as e:
+    print(f"Error !! {e}")
