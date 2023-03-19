@@ -2186,12 +2186,16 @@
 
 # Type casting
 
+# Explicit TypeCasting
 a = "10"
 b = "20"
 print(a+b)
-print(int(a)+int(b)) # type casting in python
+print(int(a)+int(b)) # explicit type casting in python done by developer
 
 
-
+# Implicit TypeCasting
+c = 1.28
+d = 2
+print(c+d) # TypeCasing done by compiler automatically from lower to higher
 
 
