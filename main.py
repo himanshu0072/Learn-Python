@@ -2224,13 +2224,28 @@
 
 
 # Subset of a set in oython
-T = int(input())
-for i in range(T):
-    A_N = int(input())
-    A = set(map(int, input().split()))
-    B_N = int(input())
-    B = set(map(int, input().split()))
-    if A.issubset(B):
-        print("True")
-    else:
-        print("False")
+# T = int(input())
+# for i in range(T):
+#     A_N = int(input())
+#     A = set(map(int, input().split()))
+#     B_N = int(input())
+#     B = set(map(int, input().split()))
+#     if A.issubset(B):
+#         print("True")
+#     else:
+#         print("False")
+
+
+# strict superset of set
+
+A = set(map(int, input().split()))
+N = int(input())
+
+is_superset = True
+for i in range(N):
+    s = set(map(int, input().split()))
+    if not s.issubset(A) or s == A:
+        is_superset = False
+        break
+
+print(is_superset)
