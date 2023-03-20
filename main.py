@@ -2380,7 +2380,7 @@ import sys
 
 # Time Conversion
 
-# a = "12:01:00AM"
+# a = "12:40:22AM"
 # formate = a[-2:]
 # hh = a[:2]
 # mm = a[3:5]
@@ -2391,16 +2391,16 @@ import sys
 #
 # if formate == "PM":
 #     if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
-#         print(f"{12+int(hh)}:0{mm}:0{ss}")
+#         print(f"0{12+int(hh)}:0{mm}:0{ss}")
 #     else:
 #         print(f"{12+int(hh)}:{mm}:{ss}")
 #
 # else:
 #     if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
-#         print(f"{12-int(hh)}:0{mm}:0{ss}")
+#         print(f"0{12-int(hh)}:0{mm}:0{ss}")
 #     else:
 #         print(f"{12-int(hh)}:{mm}:{ss}")
-#
+
 #
 # #!/bin/python3
 #
@@ -2448,3 +2448,52 @@ import sys
 #     fptr.write(result + '\n')
 #
 #     fptr.close()
+
+
+# !/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    # Write your code here
+    hour = int(s[:2])
+    minute = int(s[3:5])
+    second = int(s[6:8])
+
+    is_pm = s[-2:] == 'PM'
+
+    if is_pm and hour != 12:
+        hour += 12
+    elif not is_pm and hour == 12:
+        hour = 0
+
+    hour_str = str(hour).zfill(2)
+    minute_str = str(minute).zfill(2)
+    second_str = str(second).zfill(2)
+
+    return f"{hour_str}:{minute_str}:{second_str}"
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
