@@ -2286,24 +2286,78 @@
 
 
 # Transpose
+#
+# import numpy
+# my_array = numpy.array([[1,2,3],[4,5,6]])
+# print(numpy.transpose(my_array))
+#
+# # Flantten
+# import numpy
+# my_array = numpy.array([[1,2,3],[4,5,6]])
+# print(my_array.flatten())
 
-import numpy
-my_array = numpy.array([[1,2,3],[4,5,6]])
-print(numpy.transpose(my_array))
-
-# Flantten
-import numpy
-my_array = numpy.array([[1,2,3],[4,5,6]])
-print(my_array.flatten())
-
-
-import numpy as np
-
-n, m = map(int, input().split())
-data = np.array([input().split() for _ in range(n)], int)
-print(np.transpose(data))
-print(data.flatten())
-
-
+#
+# import numpy as np
+#
+# n, m = map(int, input().split())
+# data = np.array([input().split() for _ in range(n)], int)
+# print(np.transpose(data))
+# print(data.flatten())
 
 
+# import numpy
+#
+#
+# N, M = map(int, input().split())
+# lists = []
+# for i in range(N):
+#     a = list(map(int, input().split()))
+#     lists.append(a)
+# listss = numpy.array(lists)
+# print(numpy.transpose(lists))
+# print(listss.flatten())
+
+
+
+# Minimum and maximum
+
+# ab = [1,2,3,4,5,6,9,8,7]
+# print(sorted(ab))
+# print(max(ab))
+# print(ab[-2])
+
+
+# !/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'miniMaxSum' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def miniMaxSum(arr):
+    # Write your code here
+    sort = sorted(arr)
+    length = len(arr)
+    mini = 0
+    maxi = 0
+    for i in range(length):
+        if (i < length - 1):
+            mini += sort[i]
+        else:
+            maxi = mini - sort[0] + sort[-1]
+
+    print(mini, maxi)
+
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
