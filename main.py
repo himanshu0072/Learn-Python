@@ -2364,15 +2364,87 @@ import sys
 
 
 # candles and birthday
+#
+# candles = [3, 2, 1, 3]
+# count = 0
+# maxi = max(candles)
+# sort = sorted(candles)
+# length = len(candles)
+# for i in range(length):
+#     if candles[i] == maxi:
+#         count += 1
+#     else:
+#         pass
+# print(count)
 
-candles = [3, 2, 1, 3]
-count = 0
-maxi = max(candles)
-sort = sorted(candles)
-length = len(candles)
-for i in range(length):
-    if candles[i] == maxi:
-        count += 1
-    else:
-        pass
-print(count)
+
+# Time Conversion
+
+# a = "12:01:00AM"
+# formate = a[-2:]
+# hh = a[:2]
+# mm = a[3:5]
+# ss= a[6:8]
+# print(ss)
+# print(mm)
+# print(hh)
+#
+# if formate == "PM":
+#     if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
+#         print(f"{12+int(hh)}:0{mm}:0{ss}")
+#     else:
+#         print(f"{12+int(hh)}:{mm}:{ss}")
+#
+# else:
+#     if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
+#         print(f"{12-int(hh)}:0{mm}:0{ss}")
+#     else:
+#         print(f"{12-int(hh)}:{mm}:{ss}")
+#
+#
+# #!/bin/python3
+#
+# import math
+# import os
+# import random
+# import re
+# import sys
+#
+# #
+# # Complete the 'timeConversion' function below.
+# #
+# # The function is expected to return a STRING.
+# # The function accepts STRING s as parameter.
+# #
+#
+# def timeConversion(s):
+#     # Write your code here
+#     formate = s[-2:]
+#     hh = s[:2]
+#     mm = s[3:5]
+#     ss= s[6:8]
+#     if formate == "PM":
+#         if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
+#             time = (f"{12+int(hh)}:0{mm}:0{ss}")
+#         else:
+#             time = (f"{12+int(hh)}:{mm}:{ss}")
+#         return time
+#
+#     else:
+#         if len(mm) == 1 and len(ss) == 1 or len(ss) == 1 or len(mm) == 1:
+#             time = (f"{12-int(hh)}:0{mm}:0{ss}")
+#         else:
+#             time = (f"{12-int(hh)}:{mm}:{ss}")
+#         return time
+#
+#
+# if __name__ == '__main__':
+#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
+#
+#     s = input()
+#
+#     result = timeConversion(s)
+#
+#     fptr.write(result + '\n')
+#
+#     fptr.close()
