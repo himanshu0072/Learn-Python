@@ -2341,23 +2341,38 @@ import sys
 #
 # The function accepts INTEGER_ARRAY arr as parameter.
 #
+#
+# def miniMaxSum(arr):
+#     # Write your code here
+#     sort = sorted(arr)
+#     length = len(arr)
+#     mini = 0
+#     maxi = 0
+#     for i in range(length):
+#         if (i < length - 1):
+#             mini += sort[i]
+#         else:
+#             maxi = mini - sort[0] + sort[-1]
+#
+#     print(mini, maxi)
+#
+#
+# if __name__ == '__main__':
+#     arr = list(map(int, input().rstrip().split()))
+#
+#     miniMaxSum(arr)
 
-def miniMaxSum(arr):
-    # Write your code here
-    sort = sorted(arr)
-    length = len(arr)
-    mini = 0
-    maxi = 0
-    for i in range(length):
-        if (i < length - 1):
-            mini += sort[i]
-        else:
-            maxi = mini - sort[0] + sort[-1]
 
-    print(mini, maxi)
+# candles and birthday
 
-
-if __name__ == '__main__':
-    arr = list(map(int, input().rstrip().split()))
-
-    miniMaxSum(arr)
+candles = [3, 2, 1, 3]
+count = 0
+maxi = max(candles)
+sort = sorted(candles)
+length = len(candles)
+for i in range(length):
+    if candles[i] == maxi:
+        count += 1
+    else:
+        pass
+print(count)
