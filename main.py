@@ -2465,35 +2465,61 @@ import sys
 # The function is expected to return a STRING.
 # The function accepts STRING s as parameter.
 #
+#
+# def timeConversion(s):
+#     # Write your code here
+#     hour = int(s[:2])
+#     minute = int(s[3:5])
+#     second = int(s[6:8])
+#
+#     is_pm = s[-2:] == 'PM'
+#
+#     if is_pm and hour != 12:
+#         hour += 12
+#     elif not is_pm and hour == 12:
+#         hour = 0
+#
+#     hour_str = str(hour).zfill(2)
+#     minute_str = str(minute).zfill(2)
+#     second_str = str(second).zfill(2)
+#
+#     return f"{hour_str}:{minute_str}:{second_str}"
+#
+#
+# if __name__ == '__main__':
+#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
+#
+#     s = input()
+#
+#     result = timeConversion(s)
+#
+#     fptr.write(result + '\n')
+#
+#     fptr.close()
 
-def timeConversion(s):
-    # Write your code here
-    hour = int(s[:2])
-    minute = int(s[3:5])
-    second = int(s[6:8])
-
-    is_pm = s[-2:] == 'PM'
-
-    if is_pm and hour != 12:
-        hour += 12
-    elif not is_pm and hour == 12:
-        hour = 0
-
-    hour_str = str(hour).zfill(2)
-    minute_str = str(minute).zfill(2)
-    second_str = str(second).zfill(2)
-
-    return f"{hour_str}:{minute_str}:{second_str}"
+# def gradingStudents(grades):
+#     res_list = []
+#     for g in grades:
+#         if g < 38:
+#             res_list.append(g)
+#         elif g % 5 in (3, 4):
+#             res_list.append(g + 2 if (g + 2) % 5 == 0 else g + 1)
+#         else:
+#             res_list.append(g)
+#     return res_list
+#
+#
+# grades = [38, 40, 73, 84, 29, 58]
+# print(gradingStudents(grades))
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    s = input()
+# Division and mod divmod in python
+a = int(input())
+b = int(input())
 
-    result = timeConversion(s)
+c = divmod(a,b)
+d = list(c)
 
-    fptr.write(result + '\n')
-
-    fptr.close()
-
+print(d)
+print(c)
