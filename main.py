@@ -2514,12 +2514,44 @@ import sys
 
 
 
-# Division and mod divmod in python
-a = int(input())
-b = int(input())
+# # Division and mod divmod in python
+# a = int(input())
+# b = int(input())
+#
+# c = divmod(a,b)
+# d = list(c)
+#
+# print(d)
+# print(c)
 
-c = divmod(a,b)
-d = list(c)
 
-print(d)
-print(c)
+# Apple And Oranges ------- Algorithm implementation
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    # Write your code here
+    Apple = []
+    Orange = []
+    apple_count = 0
+    orange_count = 0
+    for i in range(len(apples)):
+        Apple.append(apples[i] + a)
+    for j in range(len(oranges)):
+        Orange.append(oranges[j] + b)
+    for k in range(s, t):
+        if k in Apple:
+            apple_count += 1
+    for l in range(s, t):
+        if l in Orange:
+            orange_count += 1
+    print(Apple)
+    print(Orange)
+    print(apple_count)
+    print(orange_count)
+
+
+s,t = 7, 11
+a, b = 5, 15
+m , n = 3, 2
+apples = [-2, 2, 1]
+oranges = [5, -6]
+countApplesAndOranges(s, t, a, b, apples, oranges)
