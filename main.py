@@ -2527,31 +2527,112 @@ import sys
 
 # Apple And Oranges ------- Algorithm implementation
 
-def countApplesAndOranges(s, t, a, b, apples, oranges):
-    # Write your code here
-    Apple = []
-    Orange = []
-    apple_count = 0
-    orange_count = 0
-    for i in range(len(apples)):
-        Apple.append(apples[i] + a)
-    for j in range(len(oranges)):
-        Orange.append(oranges[j] + b)
-    for k in range(s, t):
-        if k in Apple:
-            apple_count += 1
-    for l in range(s, t):
-        if l in Orange:
-            orange_count += 1
-    print(Apple)
-    print(Orange)
-    print(apple_count)
-    print(orange_count)
+# def countApplesAndOranges(s, t, a, b, apples, oranges):
+#     # Write your code here
+#     Apple = []
+#     Orange = []
+#     apple_count = 0
+#     orange_count = 0
+#     for i in range(len(apples)):
+#         Apple.append(apples[i] + a)
+#     for j in range(len(oranges)):
+#         Orange.append(oranges[j] + b)
+#     for k in range(s, t):
+#         if k in Apple:
+#             apple_count += 1
+#     for l in range(s, t):
+#         if l in Orange:
+#             orange_count += 1
+#     print(Apple)
+#     print(Orange)
+#     print(apple_count)
+#     print(orange_count)
+#
+#
+# s,t = 7, 11
+# a, b = 5, 15
+# m , n = 3, 2
+# apples = [-2, 2, 1]
+# oranges = [5, -6]
+# countApplesAndOranges(s, t, a, b, apples, oranges)
 
 
-s,t = 7, 11
-a, b = 5, 15
-m , n = 3, 2
-apples = [-2, 2, 1]
-oranges = [5, -6]
-countApplesAndOranges(s, t, a, b, apples, oranges)
+# Students Record DSA Question - LEETCODE
+
+s = "PPALLP"
+p_count = 0
+l_count = 0
+a_count = 0
+for i in s:
+    if i == 'P':
+        p_count += 1
+    elif i == 'A':
+        a_count += 1
+    elif i == 'L':
+        l_count += 1
+
+if a_count <= 2 and l_count <= 3:
+    if ("L"*l_count) in s:
+        print("False")
+    else:
+        print("True")
+
+print(l_count)
+print(a_count)
+print(p_count)
+
+
+s = "PPALLP"
+p_count = 0
+l_count = 0
+a_count = 0
+for i in s:
+    if i == 'P':
+        p_count += 1
+    elif i == 'A':
+        a_count += 1
+    elif i == 'L':
+        l_count += 1
+if a_count <= 1 and l_count <= 3 and ('L'* l_count) in s:
+    print("false")
+else:
+    print("true")
+
+s = "PPALLL"
+p_count = 0
+l_count = 0
+a_count = 0
+for i in s:
+    if i == 'P':
+        p_count += 1
+    elif i == 'A':
+        a_count += 1
+    elif i == 'L':
+        l_count += 1
+        if l_count > 2:
+            break
+if a_count <= 1 and l_count <= 2:
+    print("true")
+else:
+    print
+
+s = "PPALLL"
+absences = 0
+consecutive_lates = 0
+
+for i in s:
+    if i == 'A':
+        absences += 1
+        if absences >= 2:
+            print ("false")
+            consecutive_lates = 0
+        elif i == 'L':
+            consecutive_lates += 1
+            if consecutive_lates >= 3:
+                print( "false")
+            else:
+                consecutive_lates = 0
+
+print( "true")
+
+
