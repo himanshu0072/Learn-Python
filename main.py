@@ -15,8 +15,7 @@
 #
 # # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 # from itertools import count
-
-
+import collections
 # age = input("enter your age:")
 
 # try:
@@ -2559,80 +2558,112 @@ import sys
 
 # Students Record DSA Question - LEETCODE
 
-s = "PPALLP"
-p_count = 0
-l_count = 0
-a_count = 0
-for i in s:
-    if i == 'P':
-        p_count += 1
-    elif i == 'A':
-        a_count += 1
-    elif i == 'L':
-        l_count += 1
+# s = "PPALLP"
+# p_count = 0
+# l_count = 0
+# a_count = 0
+# for i in s:
+#     if i == 'P':
+#         p_count += 1
+#     elif i == 'A':
+#         a_count += 1
+#     elif i == 'L':
+#         l_count += 1
+#
+# if a_count <= 2 and l_count <= 3:
+#     if ("L"*l_count) in s:
+#         print("False")
+#     else:
+#         print("True")
+#
+# print(l_count)
+# print(a_count)
+# print(p_count)
+#
+#
+# s = "PPALLP"
+# p_count = 0
+# l_count = 0
+# a_count = 0
+# for i in s:
+#     if i == 'P':
+#         p_count += 1
+#     elif i == 'A':
+#         a_count += 1
+#     elif i == 'L':
+#         l_count += 1
+# if a_count <= 1 and l_count <= 3 and ('L'* l_count) in s:
+#     print("false")
+# else:
+#     print("true")
+#
+# s = "PPALLL"
+# p_count = 0
+# l_count = 0
+# a_count = 0
+# for i in s:
+#     if i == 'P':
+#         p_count += 1
+#     elif i == 'A':
+#         a_count += 1
+#     elif i == 'L':
+#         l_count += 1
+#         if l_count > 2:
+#             break
+# if a_count <= 1 and l_count <= 2:
+#     print("true")
+# else:
+#     print
+#
+# s = "PPALLL"
+# absences = 0
+# consecutive_lates = 0
+#
+# for i in s:
+#     if i == 'A':
+#         absences += 1
+#         if absences >= 2:
+#             print ("false")
+#             consecutive_lates = 0
+#         elif i == 'L':
+#             consecutive_lates += 1
+#             if consecutive_lates >= 3:
+#                 print( "false")
+#             else:
+#                 consecutive_lates = 0
+#
+# print( "true")
 
-if a_count <= 2 and l_count <= 3:
-    if ("L"*l_count) in s:
-        print("False")
-    else:
-        print("True")
-
-print(l_count)
-print(a_count)
-print(p_count)
 
 
-s = "PPALLP"
-p_count = 0
-l_count = 0
-a_count = 0
-for i in s:
-    if i == 'P':
-        p_count += 1
-    elif i == 'A':
-        a_count += 1
-    elif i == 'L':
-        l_count += 1
-if a_count <= 1 and l_count <= 3 and ('L'* l_count) in s:
-    print("false")
-else:
-    print("true")
+# Network of Nodes - LeetCode
+import collections
+from heapq import heappop
 
-s = "PPALLL"
-p_count = 0
-l_count = 0
-a_count = 0
-for i in s:
-    if i == 'P':
-        p_count += 1
-    elif i == 'A':
-        a_count += 1
-    elif i == 'L':
-        l_count += 1
-        if l_count > 2:
-            break
-if a_count <= 1 and l_count <= 2:
-    print("true")
-else:
-    print
+List = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        graph = collections.defaultdict(list)
 
-s = "PPALLL"
-absences = 0
-consecutive_lates = 0
+        for u, v, time in times:
+            graph[u].append([v, time])
 
-for i in s:
-    if i == 'A':
-        absences += 1
-        if absences >= 2:
-            print ("false")
-            consecutive_lates = 0
-        elif i == 'L':
-            consecutive_lates += 1
-            if consecutive_lates >= 3:
-                print( "false")
-            else:
-                consecutive_lates = 0
+        time_needed = [float('inf')] * n
+        time_needed[k - 1] = 0
+        heap = [[0, k]]
 
-print( "true")
+        visited = set()
+        visited.add(k)
+
+        while heap:
+            time, cur_node = heappop(heap)
+            for nei, nei_time in graph[cur_node]:
+                total_time = time + nei_time
+                if total_time < time_needed[nei - 1]:
+                    time_needed[nei - 1] = total_time
+                    visited.add(nei)
+                    heappush(heap, [total_time, nei])
+
+        return max(time_needed) if len(visited) == n else -1
 
 
