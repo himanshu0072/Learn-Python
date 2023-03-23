@@ -2637,33 +2637,62 @@ import sys
 
 
 # Network of Nodes - LeetCode
-import collections
-from heapq import heappop
+# import collections
+# from heapq import heappop
+#
+# List = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
+# class Solution:
+#     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+#         graph = collections.defaultdict(list)
+#
+#         for u, v, time in times:
+#             graph[u].append([v, time])
+#
+#         time_needed = [float('inf')] * n
+#         time_needed[k - 1] = 0
+#         heap = [[0, k]]
+#
+#         visited = set()
+#         visited.add(k)
+#
+#         while heap:
+#             time, cur_node = heappop(heap)
+#             for nei, nei_time in graph[cur_node]:
+#                 total_time = time + nei_time
+#                 if total_time < time_needed[nei - 1]:
+#                     time_needed[nei - 1] = total_time
+#                     visited.add(nei)
+#                     heappush(heap, [total_time, nei])
+#
+#         return max(time_needed) if len(visited) == n else -1
 
-List = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
+
+
+# Leet Code Question
+
+
+"""
+   This is the custom function interface.
+   You should not implement it, or speculate about its implementation
+   class CustomFunction:
+       # Returns f(x, y) for any given positive integers x and y.
+       # Note that f(x, y) is increasing with respect to both x and y.
+       # i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
+       def f(self, x, y):
+
+"""
+
+
 class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        graph = collections.defaultdict(list)
+    def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
 
-        for u, v, time in times:
-            graph[u].append([v, time])
-
-        time_needed = [float('inf')] * n
-        time_needed[k - 1] = 0
-        heap = [[0, k]]
-
-        visited = set()
-        visited.add(k)
-
-        while heap:
-            time, cur_node = heappop(heap)
-            for nei, nei_time in graph[cur_node]:
-                total_time = time + nei_time
-                if total_time < time_needed[nei - 1]:
-                    time_needed[nei - 1] = total_time
-                    visited.add(nei)
-                    heappush(heap, [total_time, nei])
-
-        return max(time_needed) if len(visited) == n else -1
+        res = []
+        y = 1000
+        for x in range(1, 1001):
+            while y > 1 and customfunction.f(x, y) > z:
+                y -= 1
+            if customfunction.f(x, y) == z:
+                res.append([x, y])
+        return res
 
 
