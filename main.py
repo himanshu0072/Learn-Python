@@ -2216,7 +2216,6 @@ import collections
 # himanshu.Welcome()
 
 
-
 # sum of all element of a list
 # a =[1, 2, 3, 4, 10, 11]
 # print(sum(a))
@@ -2317,7 +2316,6 @@ import collections
 # print(listss.flatten())
 
 
-
 # Minimum and maximum
 
 # ab = [1,2,3,4,5,6,9,8,7]
@@ -2333,7 +2331,6 @@ import os
 import random
 import re
 import sys
-
 
 #
 # Complete the 'miniMaxSum' function below.
@@ -2512,7 +2509,6 @@ import sys
 # print(gradingStudents(grades))
 
 
-
 # # Division and mod divmod in python
 # a = int(input())
 # b = int(input())
@@ -2635,7 +2631,6 @@ import sys
 # print( "true")
 
 
-
 # Network of Nodes - LeetCode
 # import collections
 # from heapq import heappop
@@ -2667,32 +2662,59 @@ import sys
 #         return max(time_needed) if len(visited) == n else -1
 
 
-
 # Leet Code Question
 
+#
+# """
+#    This is the custom function interface.
+#    You should not implement it, or speculate about its implementation
+#    class CustomFunction:
+#        # Returns f(x, y) for any given positive integers x and y.
+#        # Note that f(x, y) is increasing with respect to both x and y.
+#        # i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
+#        def f(self, x, y):
+#
+# """
+#
+#
+# class Solution:
+#     def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
+#
+#         res = []
+#         y = 1000
+#         for x in range(1, 1001):
+#             while y > 1 and customfunction.f(x, y) > z:
+#                 y -= 1
+#             if customfunction.f(x, y) == z:
+#                 res.append([x, y])
+#         return res
+#
 
-"""
-   This is the custom function interface.
-   You should not implement it, or speculate about its implementation
-   class CustomFunction:
-       # Returns f(x, y) for any given positive integers x and y.
-       # Note that f(x, y) is increasing with respect to both x and y.
-       # i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
-       def f(self, x, y):
 
-"""
+def minReorder(connections, n):
+    graph = [set() for i in range(n)]
+
+    for i, connection in enumerate(connections):
+        u, v = connection
+        graph[u].add((v, i))
+        graph[v].add((u, i))
+
+    dq, result = collections.deque(), 0
+    visited = [False for i in range(n)]
+    dq.append(0)
+    visited[0] = True
+    while dq:
+        node = dq.popleft()
+        for nxt, ind in graph[node]:
+            if not visited[nxt]:
+                if connections[ind] == [node, nxt]:
+                    result += 1
+                dq.append(nxt)
+                visited[nxt] = True
+    return result
 
 
-class Solution:
-    def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
+connections = [[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]
+n = 6
 
-        res = []
-        y = 1000
-        for x in range(1, 1001):
-            while y > 1 and customfunction.f(x, y) > z:
-                y -= 1
-            if customfunction.f(x, y) == z:
-                res.append([x, y])
-        return res
-
-
+print(minReorder(connections, n))
