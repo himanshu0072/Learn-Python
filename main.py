@@ -2326,11 +2326,11 @@ import collections
 
 # !/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
+# import math
+# import os
+# import random
+# import re
+# import sys
 
 #
 # Complete the 'miniMaxSum' function below.
@@ -2448,11 +2448,11 @@ import sys
 
 # !/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
+# import math
+# import os
+# import random
+# import re
+# import sys
 
 
 #
@@ -2691,30 +2691,30 @@ import sys
 #
 
 
-def minReorder(connections, n):
-    graph = [set() for i in range(n)]
-
-    for i, connection in enumerate(connections):
-        u, v = connection
-        graph[u].add((v, i))
-        graph[v].add((u, i))
-
-    dq, result = collections.deque(), 0
-    visited = [False for i in range(n)]
-    dq.append(0)
-    visited[0] = True
-    while dq:
-        node = dq.popleft()
-        for nxt, ind in graph[node]:
-            if not visited[nxt]:
-                if connections[ind] == [node, nxt]:
-                    result += 1
-                dq.append(nxt)
-                visited[nxt] = True
-    return result
-
-
-connections = [[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]
-n = 6
-
-print(minReorder(connections, n))
+# def minReorder(connections, n):
+#     graph = [set() for i in range(n)]
+#
+#     for i, connection in enumerate(connections):
+#         u, v = connection
+#         graph[u].add((v, i))
+#         graph[v].add((u, i))
+#
+#     dq, result = collections.deque(), 0
+#     visited = [False for i in range(n)]
+#     dq.append(0)
+#     visited[0] = True
+#     while dq:
+#         node = dq.popleft()
+#         for nxt, ind in graph[node]:
+#             if not visited[nxt]:
+#                 if connections[ind] == [node, nxt]:
+#                     result += 1
+#                 dq.append(nxt)
+#                 visited[nxt] = True
+#     return result
+#
+#
+# connections = [[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]
+# n = 6
+#
+# print(minReorder(connections, n))
