@@ -2718,3 +2718,29 @@ import collections
 # n = 6
 #
 # print(minReorder(connections, n))
+
+
+# Write a program that takes a list of numbers as input and calculates the average of those numbers. The program
+# should then display the average as output.
+#
+# Your program should perform the following steps:
+#
+# Prompt the user to enter the number of elements in the list.
+# Create an empty list to store the numbers.
+# Prompt the user to enter each number and add it to the list.
+# Calculate the sum of all the numbers in the list.
+# Divide the sum by the number of elements to calculate the average.
+# Display the average to the user.
+
+N = int(input("Enter the number of element in the list:"))
+List = []
+i = 0
+while i < N:
+    elements = int(input(f"Enter element {i+1} :"))
+    i = i + 1
+    List.append(elements)
+
+total = 0
+for i in range(len(List)):
+    total = total + List[i]
+print(f"Average of {N} element of the list = {List} is {total/N}")
