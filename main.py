@@ -2732,15 +2732,35 @@ import collections
 # Divide the sum by the number of elements to calculate the average.
 # Display the average to the user.
 
-N = int(input("Enter the number of element in the list:"))
-List = []
-i = 0
-while i < N:
-    elements = int(input(f"Enter element {i+1} :"))
-    i = i + 1
-    List.append(elements)
+# N = int(input("Enter the number of element in the list:"))
+# List = []
+# i = 0
+# while i < N:
+#     elements = int(input(f"Enter element {i+1} :"))
+#     i = i + 1
+#     List.append(elements)
+#
+# total = 0
+# for i in range(len(List)):
+#     total = total + List[i]
+# print(f"Average of {N} element of the list = {List} is {total/N}")
 
-total = 0
-for i in range(len(List)):
-    total = total + List[i]
-print(f"Average of {N} element of the list = {List} is {total/N}")
+
+# Write a program that takes a sentence as input and calculates the frequency of each word in
+# the sentence. The program should then display the word frequencies in descending order.
+
+sentence = input("Enter a sentence: ")
+word_list = sentence.split()
+word_freq = {}
+
+for word in word_list:
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+
+sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+
+print("Word Frequencies:")
+for word, freq in sorted_word_freq:
+    print(f"{word}: {freq}")
