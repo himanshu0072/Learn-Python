@@ -2749,18 +2749,30 @@ import collections
 # Write a program that takes a sentence as input and calculates the frequency of each word in
 # the sentence. The program should then display the word frequencies in descending order.
 
-sentence = input("Enter a sentence: ")
-word_list = sentence.split()
-word_freq = {}
+# sentence = input("Enter a sentence: ")
+# word_list = sentence.split()
+# word_freq = {}
+#
+# for word in word_list:
+#     if word in word_freq:
+#         word_freq[word] += 1
+#     else:
+#         word_freq[word] = 1
+#
+# sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+#
+# print("Word Frequencies:")
+# for word, freq in sorted_word_freq:
+#     print(f"{word}: {freq}")
 
-for word in word_list:
-    if word in word_freq:
-        word_freq[word] += 1
-    else:
-        word_freq[word] = 1
+# Your task is to complete the program by implementing the steps to calculate
+# the average of the numbers entered by the user.
 
-sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+number_list = input("Enter the numbers separated by space : ")
 
-print("Word Frequencies:")
-for word, freq in sorted_word_freq:
-    print(f"{word}: {freq}")
+numbers = list(number_list.split())
+numbers = [int(num) for num in numbers]
+total = sum(numbers)
+
+average = total / len(numbers)
+print(f"Average = {average}")
