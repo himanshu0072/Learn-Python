@@ -2768,11 +2768,24 @@ import collections
 # Your task is to complete the program by implementing the steps to calculate
 # the average of the numbers entered by the user.
 
-number_list = input("Enter the numbers separated by space : ")
+# number_list = input("Enter the numbers separated by space : ")
+#
+# numbers = list(number_list.split())
+# numbers = [int(num) for num in numbers]
+# total = sum(numbers)
+#
+# average = total / len(numbers)
+# print(f"Average = {average}")
 
-numbers = list(number_list.split())
+
+# Write a program that takes a list of numbers as input and calculates the sum of all the
+# even numbers in the list.
+
+num_list = input("Enter a list of numbers separated by spaces: ")
+numbers = num_list.split()
 numbers = [int(num) for num in numbers]
-total = sum(numbers)
-
-average = total / len(numbers)
-print(f"Average = {average}")
+even_sum = 0
+for num in numbers:
+    if num % 2 == 0:
+        even_sum += num
+print("Sum of even numbers:", even_sum)
