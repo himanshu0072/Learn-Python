@@ -2781,11 +2781,26 @@ import collections
 # Write a program that takes a list of numbers as input and calculates the sum of all the
 # even numbers in the list.
 
-num_list = input("Enter a list of numbers separated by spaces: ")
-numbers = num_list.split()
-numbers = [int(num) for num in numbers]
-even_sum = 0
-for num in numbers:
-    if num % 2 == 0:
-        even_sum += num
-print("Sum of even numbers:", even_sum)
+# num_list = input("Enter a list of numbers separated by spaces: ")
+# numbers = num_list.split()
+# numbers = [int(num) for num in numbers]
+# even_sum = 0
+# for num in numbers:
+#     if num % 2 == 0:
+#         even_sum += num
+# print("Sum of even numbers:", even_sum)
+
+
+# Write a program that takes a list of words as input and counts the number of words that start with a vowel.
+
+words = input("Enter words :")
+word_list = words.split()
+# print(word_list)
+vowel_list = ['a', 'e', 'i', 'o', 'u']
+count = 0
+for i in word_list:
+    if i[0].lower() in vowel_list:   # for matching with upper and lower case letters
+        count = count + 1
+
+print(count)
+
