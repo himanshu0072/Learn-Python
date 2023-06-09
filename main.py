@@ -2793,14 +2793,29 @@ import collections
 
 # Write a program that takes a list of words as input and counts the number of words that start with a vowel.
 
-words = input("Enter words :")
-word_list = words.split()
-# print(word_list)
-vowel_list = ['a', 'e', 'i', 'o', 'u']
-count = 0
-for i in word_list:
-    if i[0].lower() in vowel_list:   # for matching with upper and lower case letters
-        count = count + 1
+# words = input("Enter words :")
+# word_list = words.split()
+# # print(word_list)
+# vowel_list = ['a', 'e', 'i', 'o', 'u']
+# count = 0
+# for i in word_list:
+#     if i[0].lower() in vowel_list:   # for matching with upper and lower case letters
+#         count = count + 1
+#
+# print(count)
 
-print(count)
+# Write a program that takes a string as input and checks if it is a palindrome.
+# A palindrome is a word, phrase, number, or other sequence of characters that reads the same
+# forward and backward, ignoring any spaces, punctuation, and letter casing.
+
+string = input("Enter a string: ")
+
+modified_string = ''.join(char.lower() for char in string if char.isalnum())
+
+if modified_string == modified_string[::-1]:
+    print(f'"{string}" is a palindrome.')
+else:
+    print(f'"{string}" is not a palindrome.')
+
+
 
